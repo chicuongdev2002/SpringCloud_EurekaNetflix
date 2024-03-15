@@ -1,0 +1,1 @@
+package iuh.spring.user.repositories;public interface UserRepository extends org.springframework.data.jpa.repository.JpaRepository<iuh.spring.user.entity.User, java.lang.Long> {}
