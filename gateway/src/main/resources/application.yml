@@ -13,7 +13,7 @@ spring:
               - DELETE
       routes:
         - id: product
-          uri: http://localhost:8801
+          uri: http://localhost:8801Ap
           predicates:
             - Path=/api/v2/**
         - id: user
