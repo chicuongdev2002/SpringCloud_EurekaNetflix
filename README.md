@@ -1,4 +1,5 @@
-#
+# Mô hình 
+![image](https://github.com/chicuongdev2002/SpringCloud_EurekaNetflix/assets/124854803/c3b7d903-4424-43ff-9488-2d6c7a04c437)
 ## Chạy service Registry 
 ## Chạy service Product,User
 ## Chạy service Getway
@@ -31,6 +32,31 @@ http://localhost:8803/api/v2/product
 - Trang Eureka xem các service đang hoạt động (Server)
 http://localhost:8761
 ![image](https://github.com/chicuongdev2002/SpringCloud_EurekaNetflix/assets/124854803/30e9b5cf-497d-4217-86af-67aaa395cf4b)
+- Config Application.yml
+```yml
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      routes:
+        - id: product
+          uri: http://localhost:8801
+          predicates:
+            - Path=/api/v2/**
+        - id: user
+          uri: http://localhost:8802
+          predicates:
+            - Path=/api/v1/**
+```
 
 
 
